@@ -1,0 +1,49 @@
+public class GenerateObj {
+  
+	public Integer randomWithLimit(Integer upperLimit){
+            Integer rand = Math.round(Math.random()*1000);
+            return Math.mod(rand, upperLimit);
+	}
+    
+    public void generateObjForInsert(){
+        
+        List<Account> accounts = new List<Account>();
+       	List<Contact> contacts = new List<Contact>();
+       	List<Case> cases = new List<Case>();
+        
+        //create Accounts
+        for(Integer i=0; i<randomWithLimit(300); i++){
+            Account acc = new Account(
+           	  Name = 'testAcc'+i
+            );
+            	//create contacts
+            	for(Integer j=0; j<randomWithLimit(100); j++){
+
+                    Contact cont = new Contact (
+					            FirstName = 'testContName' + j,
+					            LastName = 'testContLast',
+					            AccountId = acc.id,
+					            Email = 'test@mail.com'
+                    );
+                   
+            		  //create cases
+                	for(Integer k=0; k<randomWithLimit(50); k++){
+            		  Case testCase = new Case (    
+            			  //Accountid = acc.Id,
+            			  Type = 'Test',
+                    Origin = 'Test',
+             			  Status = 'New',
+                    ContactId = cont.id
+                  );
+                  cases.add(testCase);
+                  }
+             contacts.add(cont);
+             }
+       accounts.add(acc); 
+       }
+       
+    system.debug(cases.size());
+    system.debug(contacts.size());
+    system.debug(accounts.size());
+}
+}
