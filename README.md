@@ -1,0 +1,1 @@
+# genereate-objects-scripts
