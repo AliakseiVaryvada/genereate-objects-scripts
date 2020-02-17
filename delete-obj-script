@@ -1,0 +1,6 @@
+List<Account> Accounts = [SELECT id FROM  Account];
+List<Contact> Contacts = [SELECT id FROM Contact];
+List<Case> Cases = [SELECT id FROM Case];
+delete Accounts;
+delete Contacts;
+delete Cases;
