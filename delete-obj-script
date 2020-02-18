@@ -1,6 +1,9 @@
 List<Account> Accounts = [SELECT id FROM  Account];
 List<Contact> Contacts = [SELECT id FROM Contact];
+List<Opportunity> Opportunites = [SELECT id FROM Opportunity];
 List<Case> Cases = [SELECT id FROM Case];
-delete Accounts;
-delete Contacts;
+delete Opportunites;
 delete Cases;
+delete Contacts;
+delete Accounts;
+
